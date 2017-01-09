@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Stormy</string>
+    <string name="error_title">Oops! Sorry!</string>
+    <string name="error_message">There was an error. Please try again.</string>
+    <string name="error_ok_button_text">OK</string>
+    <string name="network_unavailable_message">Network is not available</string>
+    <string name="_100">100</string>
+    <string name="degree_image">Degree Image</string>
+    <string name="at_5_00_pm_it_will_be">At 5:00 PM it will be</string>
+    <string name="humidity">HUMIDITY</string>
+    <string name="rain_snow">RAIN/SNOW</string>
+    <string name="getting_current_weather">Getting current weather</string>
+</resources>
