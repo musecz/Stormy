@@ -1,10 +1,12 @@
-package io.tailorweb.stormy;
+package io.tailorweb.stormy.weather;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.TimeZone;
 
-public class CurrentWeather {
+import io.tailorweb.stormy.R;
+
+public class Current {
     private String mIcon;
     private long mTime;
     private double mTemperature;
@@ -31,7 +33,7 @@ public class CurrentWeather {
 
     public int getIconId() {
         int iconId = R.drawable.clear_day;
-        if(mIcon.equals("clear-day")){
+        if(mIcon.equals("clear-Day")){
             iconId = R.drawable.clear_day;
         }
         else if (mIcon.equals("clear-night")){
@@ -55,7 +57,7 @@ public class CurrentWeather {
         else if (mIcon.equals("cloudy")) {
             iconId = R.drawable.cloudy;
         }
-        else if (mIcon.equals("partly-cloudy-day")) {
+        else if (mIcon.equals("partly-cloudy-Day")) {
             iconId = R.drawable.partly_cloudy;
         }
         else if (mIcon.equals("partly-cloudy-night")) {
