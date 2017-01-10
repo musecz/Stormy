@@ -10,4 +10,5 @@
     <string name="humidity">HUMIDITY</string>
     <string name="rain_snow">RAIN/SNOW</string>
     <string name="getting_current_weather">Getting current weather</string>
+    <string name="there_is_not_data_to_display">There is not data to display</string>
 </resources>

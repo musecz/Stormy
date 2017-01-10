@@ -23,8 +23,8 @@ public class Hour {
         mSummary = summary;
     }
 
-    public double getTemperature() {
-        return mTemperature;
+    public int getTemperature() {
+        return (int) Math.round(mTemperature/32);
     }
 
     public void setTemperature(double temperature) {
@@ -45,6 +45,10 @@ public class Hour {
 
     public void setTimezone(String timezone) {
         mTimezone = timezone;
+    }
+
+    public int getIconId() {
+        return Forecast.getIconId(mIcon);
     }
 
 }

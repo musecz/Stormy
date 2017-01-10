@@ -1,5 +1,9 @@
 package io.tailorweb.stormy.weather;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.TimeZone;
+
 public class Day {
     private long mTime;
     private String mSummary;
@@ -22,8 +26,8 @@ public class Day {
         mSummary = summary;
     }
 
-    public double getTemperatureMax() {
-        return mTemperatureMax;
+    public int getTemperatureMax() {
+        return (int) Math.round(mTemperatureMax/32);
     }
 
     public void setTemperatureMax(double temperatureMax) {
@@ -47,4 +51,16 @@ public class Day {
     }
 
     private String mTimezone;
+
+    public int getIconId() {
+        return Forecast.getIconId(mIcon);
+    }
+
+    public String getDayOfTheWeek() {
+        SimpleDateFormat formatter = new SimpleDateFormat("EEEE");
+        formatter.setTimeZone(TimeZone.getTimeZone(mTimezone));
+        Date dateTime = new Date(mTime*1000);
+        String timeString = formatter.format(dateTime);
+        return timeString;
+    }
 }
