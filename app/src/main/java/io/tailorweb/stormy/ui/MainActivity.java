@@ -33,6 +33,7 @@ import okhttp3.Response;
 
 public class MainActivity extends AppCompatActivity {
     public static final String TAG = MainActivity.class.getSimpleName();
+    public static final String DAILY_FORECAST = "dailyForecast";
     public Forecast mForecast;
     private TextView mTemperatureLabel;
     private TextView mTimeLabel;
@@ -71,7 +72,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void goToDailyActivity(View view){
         Intent intent = new Intent(this, DailyForecastActivity.class);
-//        intent.putExtra("forecast", mForecast.getDailyForecast());
+        intent.putExtra(DAILY_FORECAST, mForecast.getDailyForecast());
         startActivity(intent);
     }
 

@@ -20,6 +20,11 @@ public class DayAdapter extends BaseAdapter {
         mContext = context;
         mDays = days;
     }
+    private static class ViewHolder {
+        ImageView iconImageView; // Public by default
+        TextView temperatureLabel;
+        TextView dayLabel;
+    }
 
     @Override
     public int getCount() {
@@ -39,33 +44,30 @@ public class DayAdapter extends BaseAdapter {
 
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
-        viewHolder holder;
-
+        ViewHolder holder;
         if (view == null) {
             // brand new
+            holder = new ViewHolder();
             view = LayoutInflater.from(mContext).inflate(R.layout.daily_list_item,null);
-            holder = new viewHolder();
             holder.iconImageView = (ImageView) view.findViewById(R.id.iconImageView);
-            holder.temperatureLabel = (TextView) view.findViewById(R.id.temparatureLabel);
+            holder.temperatureLabel = (TextView) view.findViewById(R.id.temperatureLabel);
             holder.dayLabel = (TextView) view.findViewById(R.id.dayNameLabel);
 
             view.setTag(holder);
         } else {
             // We reuse the view otherwise
-            holder = (viewHolder) view.getTag();
+            holder = (ViewHolder) view.getTag();
         }
         // We load the data
         Day day = mDays[i];
         holder.iconImageView.setImageResource(day.getIconId());
         holder.temperatureLabel.setText(day.getTemperatureMax()+"");
-        holder.dayLabel.setText(day.getDayOfTheWeek());
+        if (i == 0) {
+            holder.dayLabel.setText("Today");
+        } else
+            holder.dayLabel.setText(day.getDayOfTheWeek());
 
-        return null;
+        return view;
     }
 
-    private static class viewHolder {
-        ImageView iconImageView; // Public by default
-        TextView temperatureLabel;
-        TextView dayLabel;
-    }
 }
