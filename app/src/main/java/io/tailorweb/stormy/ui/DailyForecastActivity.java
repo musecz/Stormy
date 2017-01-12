@@ -3,15 +3,8 @@ package io.tailorweb.stormy.ui;
 import android.app.ListActivity;
 import android.content.Intent;
 import android.os.Parcelable;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
-import android.widget.ArrayAdapter;
-import android.widget.ListAdapter;
-
-import java.lang.reflect.Array;
 import java.util.Arrays;
-import java.util.List;
 
 import io.tailorweb.stormy.R;
 import io.tailorweb.stormy.adapters.DayAdapter;

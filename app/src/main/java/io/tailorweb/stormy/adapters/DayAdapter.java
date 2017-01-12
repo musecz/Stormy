@@ -16,10 +16,11 @@ public class DayAdapter extends BaseAdapter {
     private Context mContext;
     private Day[] mDays;
 
-    public DayAdapter(Context context, Day[] days){
+    public DayAdapter(Context context, Day[] days) {
         mContext = context;
         mDays = days;
     }
+
     private static class ViewHolder {
         ImageView iconImageView; // Public by default
         TextView temperatureLabel;
@@ -48,7 +49,7 @@ public class DayAdapter extends BaseAdapter {
         if (view == null) {
             // brand new
             holder = new ViewHolder();
-            view = LayoutInflater.from(mContext).inflate(R.layout.daily_list_item,null);
+            view = LayoutInflater.from(mContext).inflate(R.layout.daily_list_item, null);
             holder.iconImageView = (ImageView) view.findViewById(R.id.iconImageView);
             holder.temperatureLabel = (TextView) view.findViewById(R.id.temperatureLabel);
             holder.dayLabel = (TextView) view.findViewById(R.id.dayNameLabel);
@@ -61,7 +62,7 @@ public class DayAdapter extends BaseAdapter {
         // We load the data
         Day day = mDays[i];
         holder.iconImageView.setImageResource(day.getIconId());
-        holder.temperatureLabel.setText(day.getTemperatureMax()+"");
+        holder.temperatureLabel.setText(day.getTemperatureMax() + "");
         if (i == 0) {
             holder.dayLabel.setText("Today");
         } else

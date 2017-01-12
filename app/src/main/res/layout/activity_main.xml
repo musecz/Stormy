@@ -36,18 +36,6 @@
         android:textSize="150sp"
         tools:ignore="HardcodedText"/>
 
-    <TextView
-        android:id="@+id/locationLabel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/degreeImage"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="10dp"
-        android:text="Royat, FR"
-        android:textColor="@android:color/white"
-        android:textSize="24sp"
-        tools:ignore="HardcodedText"/>
-
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
@@ -147,29 +135,30 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true">
+        android:layout_centerHorizontal="true"
+        android:orientation="horizontal">
 
         <Button
             android:id="@+id/hourlyButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:background="@color/white_transparent"
+            android:onClick="goToHourlyActivity"
             android:text="Hourly"
-            android:textColor="@android:color/white"
-            android:layout_weight="1"/>
+            android:textColor="@android:color/white"/>
 
         <Button
             android:id="@+id/dailyButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/white_transparent"
-            android:text="7Day"
-            android:textColor="@android:color/white"
-            android:onClick="goToDailyActivity"
             android:layout_marginLeft="2dp"
-            android:layout_weight="1"/>
+            android:layout_weight="1"
+            android:background="@color/white_transparent"
+            android:onClick="goToDailyActivity"
+            android:text="7Day"
+            android:textColor="@android:color/white"/>
 
     </LinearLayout>
 
@@ -177,21 +166,32 @@
         android:id="@+id/sumaryLabel"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/linearLayout"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="19dp"
         android:gravity="center_horizontal"
         android:text="@string/getting_current_weather"
         android:textColor="@android:color/white"
-        android:textSize="18sp"
-        android:layout_below="@+id/linearLayout"
-        android:layout_centerHorizontal="true"/>
+        android:textSize="18sp"/>
 
     <ProgressBar
         android:id="@+id/progressBar"
         style="?android:attr/progressBarStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:indeterminate="true"
         android:layout_above="@+id/iconImageView"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="19dp"/>
+        android:layout_marginBottom="19dp"
+        android:indeterminate="true"/>
+
+    <TextView
+        android:id="@+id/locationLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Royat, FR"
+        android:textColor="@android:color/white"
+        android:textSize="24sp"
+        tools:ignore="HardcodedText"
+        android:layout_above="@+id/degreeImage"
+        android:layout_centerHorizontal="true"/>
 </RelativeLayout>
