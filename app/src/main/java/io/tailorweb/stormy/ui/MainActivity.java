@@ -8,7 +8,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -35,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
     public static final String TAG = MainActivity.class.getSimpleName();
     public static final String DAILY_FORECAST = "dailyForecast";
     public static final String HOURLY_FORECAST = "hourlyForecast";
+
     public Forecast mForecast;
     private TextView mTemperatureLabel;
     private TextView mTimeLabel;
@@ -71,13 +71,13 @@ public class MainActivity extends AppCompatActivity {
         getForecast(latitude, longitude);
     }
 
-    public void goToDailyActivity(View view){
+    public void goToDailyActivity(View view) {
         Intent intent = new Intent(this, DailyForecastActivity.class);
         intent.putExtra(DAILY_FORECAST, mForecast.getDailyForecast());
         startActivity(intent);
     }
 
-    public void goToHourlyActivity(View view){
+    public void goToHourlyActivity(View view) {
         Intent intent = new Intent(this, HourlyForecastActivity.class);
         intent.putExtra(HOURLY_FORECAST, mForecast.getHourlyForecast());
         startActivity(intent);
